@@ -175,10 +175,10 @@ flowchart TD
 
 ```
 salary_prediction/
-├── 📦 Data Layer          pandas 2.0+  ·  NumPy 1.26+
-├── 🤖 Modelling Layer     statsmodels 0.14+  ·  scipy 1.11+
-├── 📊 Visualisation Layer matplotlib 3.8+  ·  seaborn (optional)
-└── 📝 Report Layer        Python-docx  ·  pptx
+├──  Data Layer          pandas 2.0+  ·  NumPy 1.26+
+├──  Modelling Layer     statsmodels 0.14+  ·  scipy 1.11+
+├──  Visualisation Layer matplotlib 3.8+  ·  seaborn (optional)
+└── Report Layer        Python-docx  ·  pptx
 ```
 
 ---
@@ -194,8 +194,8 @@ salary_prediction/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/salary-prediction.git
-cd salary-prediction
+git clone https://github.com/eaamankwah/comp-regression.git
+cd comp-regression
 
 # 2. Create a virtual environment (recommended)
 python -m venv venv
@@ -336,24 +336,20 @@ All six OLS assumptions were formally tested. Results are summarised below:
 
 ## Project Structure
 
-```
-salary-prediction/
-│
-├── 📄 salary_prediction_completed.py   # Main analysis script (all parts)
-├── 📊 salary_data.csv                  # Raw dataset (375 employees)
-│
-├── 📑 reports/
-│   ├── salary_analysis_report_v2.docx  # Full Word report (16 pages)
-│   └── salary_analysis_presentation.pptx  # Slide deck (8 slides)
-│
-├── 📈 outputs/
-│   ├── eda_plots.png                   # 4-panel EDA visualisation
-│   ├── diagnostic_plots.png            # 4-panel regression diagnostics
-│   ├── assumptions_plot.png            # Assumption verification plots
-│   └── vif_plot.png                    # VIF bar chart
-│
-└── 📖 README.md                        # This file
-```
+comp-regression/
+├── data/
+│   └── salary_data.csv
+├── notebooks/
+│   └── salary_prediction.ipynb
+├── reports/
+│   ├── salary_analysis_report.pdf
+│   └── salary_analysis_presentation.pdf
+├── src/
+│   └── salary_prediction.py
+├── .gitignore                 # Add .DS_Store, venv/, __pycache__/
+├── LICENSE                    # Add actual MIT License text
+├── README.md                  # Update paths, filenames, and clone URL
+└── requirements.txt           # Pin pandas, statsmodels, matplotlib, scipy
 
 ---
 
@@ -408,7 +404,7 @@ After controlling for all available factors, **male employees earn $7,630 more**
 
 ---
 
-## 🛠 Extending the Model
+## Extending the Model
 
 ```python
 # Suggested improvement: log-transform salary
@@ -431,7 +427,7 @@ for col, coef in model_log.params.items():
 model_robust = sm.OLS(y, X).fit(cov_type='HC3')
 print(model_robust.summary())
 ```
-
+A full write-up of the methodology, results framing, business value, and limitations is available in [Compensation Regression Report](./salary_analysis_report.pdf).
 ---
 
 ## Rubric Compliance
