@@ -69,7 +69,7 @@ The analysis covers the full data science lifecycle: raw data ingestion, missing
 
 ---
 
-## 🏗 Architecture
+## Architecture
 
 ### Data Science Pipeline — End-to-End Flow
 
@@ -205,20 +205,6 @@ venv\Scripts\activate             # Windows
 # 3. Install dependencies
 pip install -r requirements.txt
 ```
-
-### Requirements
-
-```
-pandas>=2.0.0
-numpy>=1.26.0
-statsmodels>=0.14.0
-matplotlib>=3.8.0
-scipy>=1.11.0
-scikit-learn>=1.3.0     # optional, for cross-validation
-seaborn>=0.12.0         # optional, for enhanced plots
-jupyter>=1.0.0          # optional, for notebook interface
-```
-
 ---
 
 ## Usage
@@ -298,7 +284,7 @@ edu_phd            2.308e+04  2760.7       8.36    0.000   1.77e+04  2.85e+04
 
 ---
 
-## 🔬 Regression Assumptions & Diagnostics
+##  Regression Assumptions & Diagnostics
 
 All six OLS assumptions were formally tested. Results are summarised below:
 
@@ -335,7 +321,7 @@ All six OLS assumptions were formally tested. Results are summarised below:
 ---
 
 ## Project Structure
-
+```
 comp-regression/
 ├── data/
 │   └── salary_data.csv
@@ -350,7 +336,7 @@ comp-regression/
 ├── LICENSE                    # Add actual MIT License text
 ├── README.md                  # Update paths, filenames, and clone URL
 └── requirements.txt           # Pin pandas, statsmodels, matplotlib, scipy
-
+```
 ---
 
 ## Dataset
@@ -427,7 +413,7 @@ for col, coef in model_log.params.items():
 model_robust = sm.OLS(y, X).fit(cov_type='HC3')
 print(model_robust.summary())
 ```
-A full write-up of the methodology, results framing, business value, and limitations is available in [Compensation Regression Report](./salary_analysis_report.pdf).
+A full write-up of the methodology, results framing, business value, and limitations is available in [Compensation Regression Report](./reports/salary_analysis_report.pdf).
 ---
 
 ## Rubric Compliance
